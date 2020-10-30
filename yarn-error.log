@@ -1,0 +1,194 @@
+Arguments: 
+  /home/rafal/.config/fnm/bin/node /usr/share/yarn/bin/yarn.js install
+
+PATH: 
+  /home/rafal/.config/fnm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  10.14.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://npm.fontawesome.com/F0513A54-DD2F-4596-A16E-140A7B8C9070/@fortawesome%2ffontawesome-svg-core: Hit the brakes, Ricky Bobby: this authentication method is no longer supported. Take a pit stop and read the docs to continue. https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro
+      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:65894:18)
+      at Request.self.callback (/usr/share/yarn/lib/cli.js:129018:22)
+      at Request.emit (events.js:182:13)
+      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:129990:10)
+      at Request.emit (events.js:182:13)
+      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:129912:12)
+      at Object.onceWrapper (events.js:273:13)
+      at IncomingMessage.emit (events.js:187:15)
+      at endReadableNT (_stream_readable.js:1094:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  {
+    "name": "react-hackathon",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "@babel/core": "7.11.6",
+      "@fortawesome/fontawesome-svg-core": "1.2.32",
+      "@fortawesome/free-brands-svg-icons": "5.15.1",
+      "@fortawesome/free-solid-svg-icons": "5.15.1",
+      "@fortawesome/react-fontawesome": "0.1.11",
+      "@svgr/webpack": "5.4.0",
+      "@types/lodash": "^4.14.161",
+      "@types/react-redux": "^7.1.9",
+      "@types/react-router-dom": "^5.1.5",
+      "@types/react-virtualized": "^9.21.10",
+      "@types/redux": "^3.6.0",
+      "babel-core": "7.0.0-bridge.0",
+      "babel-plugin-transform-class-properties": "^6.24.1",
+      "babel-plugin-transform-decorators-legacy": "^1.3.5",
+      "chalk": "3.0.0",
+      "compare-versions": "^3.6.0",
+      "connected-react-router": "^6.8.0",
+      "date-fns": "1.30.1",
+      "fork-ts-checker-webpack-plugin-alt": "0.4.14",
+      "graphql": "^14.3.1",
+      "i18next": "^19.8.1",
+      "i18next-browser-languagedetector": "^6.0.1",
+      "identity-obj-proxy": "3.0.0",
+      "jest-pnp-resolver": "1.2.1",
+      "lodash": "^4.17.20",
+      "md5": "^2.3.0",
+      "re-reselect": "^4.0.0",
+      "react": "^16.13.1",
+      "react-apollo": "3.1.3",
+      "react-click-outside": "^3.0.1",
+      "react-day-picker": "^7.4.8",
+      "react-dom": "^16.13.1",
+      "react-i18next": "^11.7.3",
+      "react-loading-skeleton": "^2.1.1",
+      "react-popper": "^2.2.3",
+      "react-redux": "^7.2.1",
+      "react-resize-detector": "^5.2.0",
+      "react-responsive": "^8.1.0",
+      "react-router-dom": "^5.2.0",
+      "react-scripts": "^3.4.3",
+      "react-textarea-autosize": "^8.2.0",
+      "react-virtualized": "^9.22.2",
+      "redux": "^4.0.5",
+      "redux-batched-actions": "^0.5.0",
+      "redux-devtools": "^3.7.0",
+      "redux-immutable": "^4.0.0",
+      "redux-saga": "^1.0.5",
+      "remote-redux-devtools": "^0.5.16",
+      "reselect": "^4.0.0",
+      "scheduler": "^0.19.1",
+      "typesafe-actions": "^5.1.0"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "start-build": "serve -s build -l 3000",
+      "cosmos": "NODE_PATH=./src cosmos",
+      "cosmos:export": "cosmos-export",
+      "tslint": "tslint -p ./tsconfig.json",
+      "lint:ts-all": "eslint --ignore-path ./.eslintignore -c ./.eslintrc.json --ext=jsx,ts,tsx src",
+      "lint:ts-errors": "eslint --quiet --ignore-path ./.eslintignore -c ./.eslintrc.json --ext=jsx,ts,tsx src",
+      "generate_translations": "bash scripts/generate_translations.sh",
+      "import_gettext": "bash scripts/import_gettext.sh"
+    },
+    "eslintConfig": {
+      "extends": [
+        "react-app"
+      ]
+    },
+    "browserslist": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ],
+    "babel": {
+      "presets": [
+        "react-app"
+      ]
+    },
+    "devDependencies": {
+      "@fortawesome/fontawesome-pro": "^5.15.1",
+      "@fortawesome/pro-light-svg-icons": "^5.15.1",
+      "@fortawesome/pro-regular-svg-icons": "^5.15.1",
+      "@fortawesome/pro-solid-svg-icons": "^5.15.1",
+      "@popperjs/core": "^2.5.3",
+      "@types/date-fns": "^2.6.0",
+      "@types/jest": "^26.0.14",
+      "@types/node": "^14.11.5",
+      "@types/react": "^16.9.51",
+      "@types/react-dom": "^16.9.8",
+      "@types/webpack-env": "^1.15.3",
+      "@typescript-eslint/eslint-plugin": "^4.4.0",
+      "@typescript-eslint/parser": "^4.4.0",
+      "eslint-config-react-app": "^5.2.1",
+      "eslint-plugin-flowtype": "^5.2.0",
+      "eslint-plugin-import": "^2.22.1",
+      "eslint-plugin-jsx-a11y": "^6.3.1",
+      "eslint-plugin-react": "^7.21.3",
+      "eslint-plugin-react-hooks": "^4.1.2",
+      "i18next-conv": "^10.0.2",
+      "i18next-scanner": "^2.11.0",
+      "immutable": "^4.0.0-rc.12",
+      "interpolate-html-plugin": "^3.0.0",
+      "node-sass": "^4.14.1",
+      "typescript": "^4.0.3"
+    },
+    "jest": {
+      "moduleDirectories": [
+        "node_modules",
+        "src"
+      ],
+      "collectCoverageFrom": [
+        "src/**/*.{js,jsx,ts,tsx}",
+        "!src/**/*.d.ts"
+      ],
+      "resolver": "jest-pnp-resolver",
+      "setupFiles": [
+        "react-app-polyfill/jsdom"
+      ],
+      "testMatch": [
+        "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+        "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+      ],
+      "testEnvironment": "jsdom",
+      "testURL": "http://localhost",
+      "transform": {
+        "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
+        "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+        "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      },
+      "transformIgnorePatterns": [
+        "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
+        "^.+\\.module\\.(css|sass|scss)$"
+      ],
+      "moduleNameMapper": {
+        "^react-native$": "react-native-web",
+        "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+      },
+      "moduleFileExtensions": [
+        "web.js",
+        "js",
+        "web.ts",
+        "ts",
+        "web.tsx",
+        "tsx",
+        "json",
+        "web.jsx",
+        "jsx",
+        "node"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

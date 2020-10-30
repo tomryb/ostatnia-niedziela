@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+
+  frontend:
+    image: timecamp/hackathon/frontend
+    build:
+      context: ./docker
+      target: react_frontend
+      cache_from:
+        - timecamp/hackathon/frontend
+    hostname: frontend
+    tty: true # https://github.com/facebook/create-react-app/issues/8688#issuecomment-602149917
+    environment:
+      PORT: 3000
+    volumes:
+      - .:/src
+    ports:
+      - "3000:3000"

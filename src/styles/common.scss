@@ -1,0 +1,228 @@
+@import "styles/colors.scss";
+
+$gridCellSize: 5px;
+
+/* RWD */
+$maxMobileWidth: 480px;
+$minTabletWidth: $maxMobileWidth + 1;
+$maxTabletWidth: 1024px;
+
+/* FONT SIZE */
+$defaultFontSize: 14px;
+$fontSizeOne: 11px;
+$fontSizeTwo: 12px;
+$fontSizeThree: 13px;
+$fontSizeFour: 14px;
+$fontSizeFive: 16px;
+$fontSizeSix: 18px;
+
+/* BORDER RADIUS */
+$defaultBorderRadius: 8px;
+$BorderRadiusOne: 4px;
+
+$defaultBorderWidth: 1px;
+
+$defaultHeight: 39px;
+$defaultWidth: 407px;
+
+/* FONTS WEIGHT BASED ON GOOGLE FONTS */
+$thinFontWeight: 100;
+$extraLightFontWeight: 200;
+$lightFontWeight: 300;
+$regularFontWeight: 400;
+$mediumFontWeight: 500;
+$semiBoldFontWeight: 600;
+$boldFontWeight: 700;
+$extraBoldFontWeight: 800;
+$blackBoldFontWeight: 900;
+
+/* BOX SHADOW */
+$defaultBoxShadow: 0 6px 32px 0 $whiteFiveColor;
+
+%button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  font-size: 14px;
+  border-radius: $defaultBorderRadius;
+  cursor: pointer;
+}
+
+/* SECONDARY BUTTON */
+@mixin secondary-button--hover {
+  &:hover {
+    background-color: $whiteFourColor;
+    color: $warmGreyColor;
+    border-color: $whiteThreeColor;
+  }
+}
+
+@mixin secondary-button--active {
+  &:active {
+    border-color: $algaeColor;
+    color: $algaeColor;
+    background-color: transparent;
+  }
+}
+
+@mixin secondary-button($hoverStyle: true, $activeStyle: true) {
+  @extend %button;
+
+  @if $hoverStyle {
+    @include secondary-button--hover;
+  }
+  @if $activeStyle {
+    @include secondary-button--active;
+  }
+
+  border-radius: $defaultBorderRadius;
+  border: 1px solid $whiteThreeColor;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* TAG BUTTON */
+@mixin tag-button--hover {
+  &:hover {
+    color: $whiteColor;
+    background-color: $softGreenColor;
+  }
+}
+
+@mixin tag-button--active {
+  &:active {
+    color: $whiteColor;
+    background-color: $algaeColor;
+  }
+}
+
+@mixin tag-button($hoverStyle: true, $activeStyle: true) {
+  @extend %button;
+
+  @if $hoverStyle {
+    @include tag-button--hover;
+  }
+  @if $activeStyle {
+    @include tag-button--active;
+  }
+
+  border: 1px solid $algaeColor;
+  color: $algaeColor;
+  background-color: $paleGreyColor;
+  border-radius: $defaultBorderRadius;
+}
+
+@mixin default-font-params {
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+%default-placeholder-color {
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $warmGreyColor;
+    opacity: 1; /* Firefox */
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $warmGreyColor;
+  }
+
+  &::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $warmGreyColor;
+  }
+}
+
+// set placeholder color
+@mixin place-holder($color) {
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $color;
+    opacity: 1; /* Firefox */
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $color;
+  }
+
+  &::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $color;
+  }
+}
+
+// spin animation:
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@mixin spin-animation($duration: 4s) {
+  -webkit-animation: spin $duration linear infinite;
+  -moz-animation: spin $duration linear infinite;
+  animation: spin $duration linear infinite;
+}
+
+%default-input-label {
+  font-size: 12px;
+  color: $greyishBrownTwoColor;
+}
+
+@mixin button-hover($color) {
+  &:hover {
+    background-color: rgba($color, .8);
+  }
+}
+
+%clickable-popover-item {
+  font-size: 14px;
+  padding: 5px 13px;
+  border-radius: $defaultBorderRadius;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $whiteFourColor;
+  }
+  &:active {
+    background-color: $whiteNineColor;
+  }
+}
+
+@mixin button-inactive {
+  border: solid 1px #dbdbdb;
+  color: #8a8a8a;
+}
+
+@mixin monospaced-font {
+  font-family: B612 Mono, monospace, monospace;
+}
+
+@mixin default-list-cell {
+  flex: 1;
+  text-align: left;
+  padding: 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

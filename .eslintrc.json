@@ -1,0 +1,88 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "react-app",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "spaced-comment": "error",
+    "indent": [
+      "error",
+      2,
+      { "SwitchCase": 1 }
+    ],
+    "no-eval": "error",
+    "no-trailing-spaces": "error",
+    "no-unsafe-finally": "error",
+    "no-var": "error",
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "space-unary-ops": [
+      2,
+      {
+        "words": true,
+        "nonwords": false,
+        "overrides": {
+          "new": false,
+          "++": true
+        }
+      }
+    ],
+    "space-infix-ops": "error",
+    "space-in-parens": [
+      "error",
+      "never"
+    ],
+    "space-before-blocks": "error",
+    "comma-dangle": [
+      "error",
+      {
+        "objects": "only-multiline",
+        "arrays": "never",
+        "functions": "never"
+      }
+    ],
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "curly": "error",
+    "no-unused-vars": "off",
+    "semi": "off",
+    "@typescript-eslint/semi": ["error", "always"],
+    "@typescript-eslint/no-unused-vars": 1,
+    "@typescript-eslint/no-extra-semi": 0,
+    "react/prop-types": ["error", { "skipUndeclared": true }],
+    "object-curly-spacing": ["error", "always"],
+    // note you must disable the base rule as it can report incorrect errors
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": "off"
+  }
+}
