@@ -1,0 +1,25 @@
+@import "styles/colors.scss";
+@import "styles/common.scss";
+
+.filtersContainer {
+  display: flex;
+  flex-direction: row;
+
+  div {
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+
+    div {
+      align-items: center;
+    }
+
+    .filterName {
+      font-size: small;
+    }
+
+    input {
+      width: 200px;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@import "styles/colors.scss";
+@import "styles/common.scss";
+
+.listViewItem {
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: $darkGreyColor;
+  color: $whiteColor;
+  div {
+    padding:10px
+  }
+
+  :hover {
+    div {
+      background-color: darkslategray;
+    }
+  }
+}
+
+.fullWidth {
+  width: 100vh;
+}
+
+.showDetails {
+  width: 20px;
+  height: 15px;
+  background-color: $dodgerBlueColor;
+  font-size: smaller;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &:hover {
+    background-color: $dodgerBlueTwoColor;
+  }
+}
+
+img.shopPic {
+  width: 70px;
+  height: 70px;
+}
+
+.shopName {
+  a {
+    text-decoration: none;
+    color:white;
+  }
+  background-color: $greenishColor;
+  font-size: smaller;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.deadlineTime{
+  div {
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+  }
+  .relativeTime {
+    font-size: smaller;
+  }
+
+}

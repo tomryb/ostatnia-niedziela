@@ -1,45 +1,34 @@
 import { useAppHook } from 'components/App/hook';
+import AddView from 'components/Pages/AddView';
+import MainListView from 'components/Pages/MainListView';
+import DetailsView from 'components/Pages/DetailsView';
 import React from 'react';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import './styles.scss';
 
 const App: React.FC = () => {
-
-  const {
-    isLoading,
-    isSuccess,
-    isFailure
-  } = useAppHook();
-
   return (
-    <div className="App">
-      {isLoading && renderLoading()}
-      {isSuccess && renderSuccessMessage()}
-      {isFailure && renderFailureMessage()}
-    </div>
+    <Router>
+      <div className="fullWidth">
+        <Switch>
+          <Route path="/add-view">
+            <AddView />
+          </Route>
+          <Route path="/details-view/:id">
+            <DetailsView />
+          </Route>
+          <Route path="/">
+            <MainListView />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 };
-
-const renderLoading = () => {
-  return (
-    <span className="App__loader">{'Loading...'}</span>
-  );
-}
-
-const renderSuccessMessage = () => {
-  return (
-    <img
-      className="App__image"
-      src="https://media0.giphy.com/media/BoBOKNtlR8rTi/200.gif"
-      alt="Gif"
-    />
-  );
-}
-
-const renderFailureMessage = () => {
-  return (
-    <span className="App__failure">{'Whooops, something went wrong!'}</span>
-  );
-}
 
 export default App;

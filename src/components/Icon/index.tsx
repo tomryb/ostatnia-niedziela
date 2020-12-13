@@ -1,40 +1,43 @@
 import React from 'react';
 
-import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 import { IconName } from 'assets/icons/types';
-import { IconPrefix } from '@fortawesome/pro-solid-svg-icons';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+// import { IconPrefix } from '@fortawesome/pro-solid-svg-icons';
+// import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
-export interface IconInterface extends Partial<FontAwesomeIconProps> {
+// export interface IconInterface extends Partial<FontAwesomeIconProps> {
+export interface IconInterface {
   className?: string;
 
   width?: string | number;
   height?: string | number;
 
   name?: IconName;
-  iconPrefix: IconPrefix;
+  // iconPrefix: IconPrefix;
 }
 
 const defaultProps: IconInterface = {
   className: '',
 
-  iconPrefix: 'fas',
+  // iconPrefix: 'fas',
 };
 
 const Icon: React.FC<IconInterface> = (props) => {
 
-  if (!props.name) {
-    return null;
-  }
+  return null;
 
-  const { name, iconPrefix, ...iconProps } = props;
+  // if (!props.name) {
+  //   return null;
+  // }
 
-  return (
-    <FontAwesomeIcon
-      {...iconProps}
-      icon={[iconPrefix, name] as IconProp}
-    />
-  );
+  // const { name, iconPrefix, ...iconProps } = props;
+
+  // return (
+  //   <FontAwesomeIcon
+  //     {...iconProps}
+  //     icon={[iconPrefix, name] as IconProp}
+  //   />
+  // );
 }
 
 Icon.defaultProps = defaultProps;

@@ -1,0 +1,99 @@
+@import "styles/colors.scss";
+@import "styles/common.scss";
+
+.detailView {
+  width: 100%; 
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $darkGreyColor;
+  color: $whiteColor;
+  flex-direction: row;
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+}
+
+.chatContainer {
+  width: 50%;
+  height: 100%;
+}
+
+.shopLogo {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  img {
+    height:300px;
+    width: 300px;
+  }
+}
+
+.detailsData {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  div {
+    padding: 20px;
+    font-size: larger;
+    text-align: center;
+    span.label {
+      font-size: x-small;
+    }
+  }
+}
+
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  button {
+    width: 20%;
+    margin: 1rem auto;
+
+  }
+}
+
+.detailView input {
+  margin: 1rem 0;
+}
+
+.singleMessage {
+  list-style-type: none;
+color: $redOrangeColor;
+display: flex;
+flex-direction: column;
+}
+
+.singleMessage:nth-of-type(even) {
+  align-items: flex-end;
+  color: $softGreenColor;
+  margin-right: 5rem;
+}
+
+.singleMessage:nth-of-type(odd) {
+  margin-left: 5rem;
+}
+
+span.date {
+color: $darkSkyBlueColor;
+}
+
+.backLink {
+  text-decoration: none;
+  color: white;
+  font-size: xx-large;
+}
