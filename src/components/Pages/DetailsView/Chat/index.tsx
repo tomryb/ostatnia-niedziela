@@ -1,6 +1,7 @@
 import React from 'react';
 import useDetailViewHook from './hook';
 
+import './styles.scss';
 
 const Chat: React.FC = (props) => {
 

@@ -1,0 +1,23 @@
+@import "styles/colors.scss";
+@import "styles/common.scss";
+
+.singleMessage {
+    list-style-type: none;
+    color: $redOrangeColor;
+    display: flex;
+    flex-direction: column;
+}
+
+.singleMessage:nth-of-type(even) {
+    align-items: flex-end;
+    color: $softGreenColor;
+    margin-right: 5rem;
+}
+
+.singleMessage:nth-of-type(odd) {
+    margin-left: 5rem;
+}
+
+span.date {
+    color: $darkSkyBlueColor;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import useDetailViewHook from '../Chat/hook';
 import { format, distanceInWords } from 'date-fns'
 
+import './styles.scss';
 
 const ChatDisplay: React.FC = (props) => {
 
