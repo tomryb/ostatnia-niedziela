@@ -1,11 +1,11 @@
 import React from 'react';
-import useDetailViewHook from './hook';
+import useChatDisplayHook from './hook';
 
 import './styles.scss';
 
-const Chat: React.FC = (props) => {
+const Chat: React.FC = () => {
 
-  const hook = useDetailViewHook();
+  const hook = useChatDisplayHook();
 
   return (
     <div className="chat">
