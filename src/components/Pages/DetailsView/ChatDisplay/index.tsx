@@ -1,6 +1,6 @@
 import React from 'react';
 import useChatDisplayHook from '../Chat/hook';
-import { format, distanceInWords } from 'date-fns'
+import { format, distanceInWords } from 'date-fns';
 
 import './styles.scss';
 
@@ -10,14 +10,14 @@ const ChatDisplay: React.FC = () => {
 
   return (
     <div className="chatDisplay">
-        <ul>{hook.msgArray.map((item, index) => { 
-          let timestamp = format(item.added, 'YYYY-MM-DD HH:mm:ss')
-          return (<li className="singleMessage" key={index}>
+      <ul>{hook.msgArray.map((item, index) => {
+        const timestamp = format(item.added, 'YYYY-MM-DD HH:mm:ss');
+        return (<li className="singleMessage" key={index}>
           <span className="date">{timestamp}</span>
           {item.text}
-        </li>)
-        })}
-        </ul>
+        </li>);
+      })}
+      </ul>
     </div>
   );
 };
