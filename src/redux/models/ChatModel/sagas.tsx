@@ -3,28 +3,31 @@ import { put, fork, takeEvery, delay } from 'redux-saga/effects';
 import get from 'lodash/get';
 import { ChatActions } from './types';
 import { PartialPayloadAction } from 'types/reduxTypes';
-import { setIsChatWorkingSuccess } from './actions';
+import { addMessageSuccess } from './actions';
 
 export const ChatModelSagas = [
   function* () {
     yield fork(function* () {
-      yield takeEvery(ChatActions.SET_IS_CHAT_WORKING, setIsChatWorking);
+      yield takeEvery(ChatActions.ADD_MESSAGE, addMessage);
     });
   }
 ];
 
-export function* setIsChatWorking({ payload }: PartialPayloadAction<{
-  value: boolean
+export function* addMessage({ payload }: PartialPayloadAction<{
+  text: string,
+  knajpaId: string,
 }>) {
   try {
-    const value = get(payload, 'value', false);
+    const text = get(payload, 'text', '');
+    const knajpaId = get(payload, 'knajpaId', null);
+    const messageId = get(payload, 'messageId', null);
 
-    if (value) {
-      console.log('SAGA IS ALSO WORKING!');
+    if (knajpaId) {
+      console.log('ADD MESSAGE: ' + text + ' TO ' + knajpaId);
 
       yield delay(2000); // wait 2 seconds
 
-      yield put(setIsChatWorkingSuccess());
+      yield put(addMessageSuccess(messageId, text));
     } else {
       throw new Error('Something went terribly wrong :|');
     }

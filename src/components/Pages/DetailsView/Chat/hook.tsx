@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addMessage } from 'redux/models/ChatModel/actions';
 
 export type Message = {
     text: string,
-    added: number
+    added: number,
+    id: string
 };
 
 interface ChatInterface {
@@ -13,6 +16,7 @@ interface ChatInterface {
 }
 
 export default function useChatDisplayHook(): ChatInterface {
+  const dispatch = useDispatch();
 
   const [state, setState] = useState({
     value: '',
@@ -25,6 +29,8 @@ export default function useChatDisplayHook(): ChatInterface {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    dispatch(addMessage(state.text, state.id));
     reset();
   };
 

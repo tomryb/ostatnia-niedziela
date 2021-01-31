@@ -1,13 +1,17 @@
 import { action } from 'typesafe-actions';
 import { ChatActions } from 'redux/models/ChatModel/types';
 
-export const setIsChatWorking = (
-  value: boolean
+export const addMessage = (
+  text: string,
+  knajpaId: string
 ) =>
-  action(ChatActions.SET_IS_CHAT_WORKING, { value });
+  action(ChatActions.ADD_MESSAGE, { text, knajpaId });
 
-export const setIsChatWorkingSuccess = () =>
-  action(ChatActions.SET_IS_CHAT_WORKING_SUCCESS);
+export const addMessageSuccess = (
+  message: string,
+  messageID: string
+) =>
+  action(ChatActions.ADD_MESSAGE_SUCCESS, { messageID, message });
 
-export const setIsChatWorkingFailure = () =>
-  action(ChatActions.SET_IS_CHAT_WORKING_FAILURE);
+// export const setIsChatWorkingFailure = () =>
+//   action(ChatActions.ADD_MESSAGE_FAILURE);

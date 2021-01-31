@@ -4,7 +4,11 @@ import { ChatModelStateInterface, ChatModelStateFields, ChatActions } from './ty
 import { PayloadAction } from 'types/reduxTypes';
 
 const initialState: ChatModelStateInterface = fromJS({
-  [ChatModelStateFields.IS_CHAT_WORKING]: null
+  [ChatModelStateFields.IS_CHAT_WORKING]: null,
+
+  messages: {},
+  knajpyMessages: {},
+
 });
 
 const ChatReducer: Reducer<ChatModelStateInterface, PayloadAction> = (
@@ -12,12 +16,16 @@ const ChatReducer: Reducer<ChatModelStateInterface, PayloadAction> = (
 ): ChatModelStateInterface => {
 
   switch (action.type) {
-    case ChatActions.SET_IS_CHAT_WORKING_SUCCESS: {
+    case ChatActions.ADD_MESSAGE_SUCCESS: {
+
       return state
-        .set(ChatModelStateFields.IS_CHAT_WORKING, true);
+        .setIn(['messages', action.payload.messageId], action.payload.message);
+
+      // return state
+      //   .set(ChatModelStateFields.IS_CHAT_WORKING, true);
     }
 
-    case ChatActions.SET_IS_CHAT_WORKING_FAILURE: {
+    case ChatActions.ADD_MESSAGE_FAILURE: {
       return state
         .set(ChatModelStateFields.IS_CHAT_WORKING, false);
     }
