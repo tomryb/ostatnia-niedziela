@@ -1,35 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router-dom";
-import { getKnajpaDetails } from 'redux/models/KnajpyModel/actions';
-import { selectKnajpa } from 'redux/models/KnajpyModel/selectors';
+import { getKnajpy } from 'redux/models/KnajpyModel/actions';
+import { selectKnajpyIds } from 'redux/models/KnajpyModel/selectors';
 
-interface DetailViewHookInterface {
-    getDetailedData: any;
+interface ListViewHookInterface {
+    getListData: any;
     id: string;
 }
 
-export default function useDetailView(): DetailViewHookInterface {
+export default function useListView(): ListViewHookInterface {
     let { id }  = useParams<{ id: string }>();
 
     const dispatch = useDispatch();
     const onFetchData = (id: string) => {
-        dispatch(getKnajpaDetails(id));
+
+        dispatch(getKnajpy());
     }
-
-    const knajpa = useSelector((state) => selectKnajpa(state, { id }));
-
-    console.log('KNAJPA = ', knajpa);
     
-    const sampleData = {
-        id: 5,
-        name: 'pizza express',
-        address: 'Krakowska',
-        shopPicUrl: "https://static.pyszne.pl/images/restaurants/pl/00QQ1511/logo_465x320.png",
-        deadlineTime: 1607867606,
-        isTakeaway: false,
-        minOrderAmount: 10
-    }
+    const knajpy = useSelector((state) => selectKnajpyIds(state));
+
+    console.log('KNAJPA = ', knajpy);
+    
 
     const [state, setState] = useState({
         
@@ -42,7 +34,7 @@ export default function useDetailView(): DetailViewHookInterface {
     }, []);
 
     return {
-        getDetailedData: sampleData,
+        getListData: knajpy,
         id
     };
 }

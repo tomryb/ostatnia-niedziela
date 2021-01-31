@@ -20,7 +20,7 @@ export function* setIsTemplateWorking({ payload }: PartialPayloadAction<{
     const value = get(payload, 'value', false);
 
     if (value) {
-      console.log('SAGA IS ALSO WORKING!');
+      // console.log('SAGA IS ALSO WORKING!');
 
       yield delay(2000); // wait 2 seconds
 

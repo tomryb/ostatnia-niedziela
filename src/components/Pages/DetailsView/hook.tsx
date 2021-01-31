@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router-dom";
-import { getKnajpaDetails } from 'redux/models/KnajpyModel/actions';
 import { selectKnajpa } from 'redux/models/KnajpyModel/selectors';
 
 interface DetailViewHookInterface {
@@ -12,14 +11,9 @@ interface DetailViewHookInterface {
 export default function useDetailView(): DetailViewHookInterface {
     let { id }  = useParams<{ id: string }>();
 
-    const dispatch = useDispatch();
-    const onFetchData = (id: string) => {
-        dispatch(getKnajpaDetails(id));
-    }
-
     const knajpa = useSelector((state) => selectKnajpa(state, { id }));
 
-    console.log('KNAJPA = ', knajpa);
+    console.log('KNAJPA = ', knajpa)
     
     const sampleData = {
         id: 5,
@@ -37,8 +31,6 @@ export default function useDetailView(): DetailViewHookInterface {
 
     useEffect(() => {
         console.log('SASDSd');
-
-       onFetchData(id);
     }, []);
 
     return {

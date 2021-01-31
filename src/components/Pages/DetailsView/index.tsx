@@ -31,7 +31,7 @@ const DetailView: React.FC = (props) => {
       <div className="chatContainer">
         <Chat></Chat>
         <ChatDisplay></ChatDisplay>
-      </div>
+      </div>Id
     </div>
   );
 };
