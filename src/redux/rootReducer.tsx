@@ -9,12 +9,16 @@ import { connectRouter } from 'connected-react-router/immutable';
 import { domain as TemplateDomain } from 'redux/models/TemplateModel';
 import TemplateReducer from 'redux/models/TemplateModel/reducer';
 
+import { domain as KnajpyDomain } from 'redux/models/KnajpyModel';
+import KnajpyReducer from 'redux/models/KnajpyModel/reducer';
+
 import { ConfigInterface } from 'services/interfaces';
 
 export default function (asyncReducers, history, config: ConfigInterface) {
   const reducers = {
     // [ModelDomain]: ModelReducer
     [TemplateDomain]: TemplateReducer,
+    [KnajpyDomain]: KnajpyReducer,
 
     ...asyncReducers,
   };
