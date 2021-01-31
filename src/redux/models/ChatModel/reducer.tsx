@@ -7,7 +7,7 @@ const initialState: ChatModelStateInterface = fromJS({
   [ChatModelStateFields.IS_CHAT_WORKING]: null
 });
 
-const TemplateModelReducer: Reducer<ChatModelStateInterface, PayloadAction> = (
+const ChatReducer: Reducer<ChatModelStateInterface, PayloadAction> = (
   state: ChatModelStateInterface = initialState, action: PayloadAction
 ): ChatModelStateInterface => {
 
@@ -28,4 +28,4 @@ const TemplateModelReducer: Reducer<ChatModelStateInterface, PayloadAction> = (
   }
 };
 
-export default TemplateModelReducer;
+export default ChatReducer;

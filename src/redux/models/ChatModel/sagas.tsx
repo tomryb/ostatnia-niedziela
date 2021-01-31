@@ -5,7 +5,7 @@ import { ChatActions } from './types';
 import { PartialPayloadAction } from 'types/reduxTypes';
 import { setIsChatWorkingSuccess } from './actions';
 
-export const TemplateModelSagas = [
+export const ChatModelSagas = [
   function* () {
     yield fork(function* () {
       yield takeEvery(ChatActions.SET_IS_CHAT_WORKING, setIsChatWorking);
